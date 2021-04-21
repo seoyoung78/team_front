@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+      Login Form
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="uid">User ID</label>
+        <input id="uid" type="text" class="form-control" ng-model="user.uid" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="upassword">User Password</label>
+        <input id="upassword" type="password" class="form-control" ng-model="user.upassword" autocomplete="current-password">
+      </div>
+      <!-- AngularJS는 자동 submit 기능이 없음 -->
+      <button class="btn btn-primary" ng-click="login(user)">Login</button>
+    </form>
+  </div>
+</div>

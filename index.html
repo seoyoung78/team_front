@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app"> <!-- html과 script에 작성한 angularjs 연결 / ng- : angularjs 사용 -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script> <!-- 화면 전환을 위한 라이브러리 -->
+    
+    <!-- <base href="/"/> angular base 위치 : root가 어디서 시작하는가 , 포트 번호까지 생략되어 있음 -->
+    
+    <script src="app.js"></script>  <!-- 모듈 생성 -->
+    <script src="appRoute.js"></script>
+
+    <script src="modules/exam03Module.js"></script>
+    <script src="modules/exam04Module.js"></script>
+
+    <script src="controllers/productsRefundController.js"></script>
+    <script src="controllers/reviewsController.js"></script>
+    <script src="controllers/exam27Controller.js"></script>
+
+    <script src="services/exam23Service.js"></script>
+    <script src="services/reviewsService.js"></script>
+    <script src="services/productsRefundService.js"></script>
+    <script src="services/exam27Service.js"></script>
+
+
+
+</head>
+<body ng-controller="mainController">
+    <div class="d-flex flex-column vh-100">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white font-weight-bold justify-content-between">
+            <a class="navbar-brand" href="./">
+            <img src="./resources/img/angular.png" width="30" height="30" class="d-inline-block align-top">
+            AngularJS
+            </a>
+            <div>
+                <div ng-show="!uid">
+                    <a class="btn btn-success btn-sm" href="/#!/exam27_http_auth/login">로그인</a>    <!--페이지 이동 시 a 태그 사용-->
+                </div>
+                <div ng-show="uid">
+                    ID: {{uid}} <button class="btn btn-success btn-sm ml-2" ng-click="logout()">로그아웃</button>   <!-- 값을 넘겨줄 경우 사용-->
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex-grow-1 container-fluid">
+            <div class="row h-100">
+            <div class="col-md-6 col-lg-4 p-3 bg-dark">
+                <div class="h-100 d-flex flex-column">
+                <div class="flex-grow-1" style="height:0px; overflow-y: auto; overflow-x: hidden;">
+                    <ng-include src="'appMenu.html'"></ng-include>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-8 p-3">
+                <div class=" h-100 d-flex flex-column">
+                <div class="flex-grow-1 overflow-auto pr-3" style="height:0px" >
+                    <ng-view/>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

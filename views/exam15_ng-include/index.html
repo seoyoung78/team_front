@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+      exam15_ng-include.html
+  </div>
+
+  <div class="card-body">
+      <div class="alert alert-primary">
+        <input type="checkbox" ng-model="showList"/> Use the list view
+        <button class="btn btn-danger btn-sm ml-3" ng-click="changeView()">화면 변경</button>
+      </div>
+      <ng-include src="'/views/exam15_ng-include/' + viewFile()"
+                  onload="handleLoad()"></ng-include> <!-- 외부에서 받아올 경우 사용(이동x), 서버에서 Ajax 통신을 통해 html 조각을 받음 -->
+  </div>
+</div>

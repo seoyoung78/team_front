@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header">
+      review read
+  </div>
+
+  <div class="card-body">
+      <div>
+          <div class="form-group">
+              <label>주문번호:</label>
+              <input class="form-control" value={{review.orderNo}} readonly/>   <!-- 단방향 바인딩 -->
+          </div>
+          <div class="form-group">
+            <label>상품번호:</label>
+            <input class="form-control" value={{review.productNo}} readonly/>   <!-- 단방향 바인딩 -->
+          </div>
+          <div class="form-group">
+              <label>글쓴이:</label>
+              <input class="form-control" ng-value="review.userId" readonly/>
+          </div>
+          <div class="form-group">
+              <label>내용:</label>
+              <textarea class="form-control" ng-value="review.reviewContent" readonly></textarea>
+          </div>
+          <button class="btn btn-primary btn-sm" ng-click="getList(pager.pageNo)">목록</button>
+          <button class="btn btn-primary btn-sm" ng-click="updateBoardForm()">수정</button> 
+          <button class="btn btn-primary btn-sm" ng-click="deleteBoard(review.reviewNo)">삭제</button>       
+      </div>
+  </div>
+</div>

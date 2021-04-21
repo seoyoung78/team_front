@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">
+    boards.html
+  </div>
+  <div class="card-body">
+    <a class="btn btn-primary btn-sm" href="/#!/exam24_builtin_service">뒤로</a>
+
+    <div class="mt-2">
+      <div class="alert alert-primary mt-3">$anchorScroll 내장 서비스</div>
+      <p id="top">This is the top</p>
+      <button class="btn btn-primary" ng-click="show('bottom')">Go to Bottom</button>
+      <ul>
+        <li ng-repeat="item in items">{{item}}</li>
+      </ul>
+      <p id="bottom">This is the bottom</p>
+      <button class="btn btn-primary" ng-click="show('top')">Go to Top</button>
+    </div>
+  </div>
+</div>

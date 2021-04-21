@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="card-header">
+        create.html
+    </div>
+
+    <div class="card-body">
+      <div>
+        <div class="form-group">
+            <label>제목:</label>
+            <input class="form-control" ng-model="board.btitle"/>
+        </div>
+        <div class="form-group">
+            <label>글쓴이:</label>
+            <input class="form-control" value="{{uid}}" readonly/>
+        </div>
+        <div class="form-group">
+            <label>내용:</label>
+            <textarea class="form-control" ng-model="board.bcontent"></textarea>
+        </div>
+        <div class="form-group">
+            <label>첨부:</label>
+            <input id="battach" type="file" class="form-control-file"/>
+        </div>
+        <button class="btn btn-primary btn-sm" ng-click="createBoard(board)">등록</button>
+        <button class="btn btn-primary btn-sm" ng-click="cancel()">취소</button>        
+      </div>
+    </div>
+</div>
